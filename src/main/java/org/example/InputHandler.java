@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
+import org.example.exception.InputLimitExceededException;
 
 public class InputHandler {
 
@@ -20,7 +21,7 @@ public class InputHandler {
         inputCount++;
       }
     }
-    throw new IllegalArgumentException("3回入力に失敗したため、処理を中止します。");
+    throw new InputLimitExceededException("入力上限3回を超えました。");
   }
 
   //演算子を入力値から取得する
@@ -39,6 +40,6 @@ public class InputHandler {
         inputCount++;
       }
     }
-    throw new IllegalArgumentException("3回入力に失敗したため、処理を中止します。");
+    throw new InputLimitExceededException("入力上限3回を超えました。");
   }
 }
