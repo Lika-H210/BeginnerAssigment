@@ -1,6 +1,9 @@
 package org.example;
 
 import java.util.Scanner;
+import org.example.exception.CalculationException;
+import org.example.exception.InputLimitExceededException;
+import org.example.exception.InvalidArgumentException;
 
 public class Main {
 
@@ -22,8 +25,7 @@ public class Main {
       double result = calculator.calculate(number1, number2, operator);
 
       System.out.println("計算結果 : " + result);
-
-    } catch (ArithmeticException | IllegalArgumentException e) {
+    } catch (InputLimitExceededException | InvalidArgumentException | CalculationException e) {
       System.out.println(e.getMessage());
       e.printStackTrace();
     }
